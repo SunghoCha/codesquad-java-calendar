@@ -43,7 +43,10 @@ public class Prompt {
 
             Calendar cal = new Calendar();
 
-            cal.printCalander(2023,month);
+            System.out.println("======== V1 ========");
+            cal.printCalander(2024,month);
+            System.out.println("======== V2 ========");
+            cal.printCalander2(2023,month);
             System.out.println();
         }
 
