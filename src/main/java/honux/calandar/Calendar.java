@@ -11,13 +11,18 @@ public class Calendar {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("달을 입력하세요");
-        int month = Integer.parseInt(br.readLine());
-        Calendar cal = new Calendar();
 
-        System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.FindMaxDay(month));
+        System.out.println("반복 횟수를 입력하세요.");
+        int N = Integer.parseInt(br.readLine());
+        for (int i = 0; i < N; i++) {
+            System.out.printf("달을 입력하세요 [%d/%d]\n", i,N);
+            int month = Integer.parseInt(br.readLine());
+            Calendar cal = new Calendar();
 
-        cal.PrintSample();
+            System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.FindMaxDay(month));
+        }
+
+
     }
 
     public int FindMaxDay(int month){
