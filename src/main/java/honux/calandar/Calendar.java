@@ -5,9 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Calendar {
+
+    private final int[] maxDays = {31, 28, 31, 30 ,31, 30, 31, 31, 30, 31, 30, 31};
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("달을 입력하세요");
+        int month = Integer.parseInt(br.readLine());
+        Calendar cal = new Calendar();
+
+//        System.out.println(month + "월은 " + cal.FindMaxDay(month) + "일까지 있습니다.");
+        System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.FindMaxDay(month));
 
 //        StringBuilder sb = new StringBuilder();
 
@@ -26,16 +35,9 @@ public class Calendar {
 //        }
 //        String s = sb.toString();
 //        System.out.println(s);
-
-        int[] maxDays = {31, 28, 31, 30 ,31, 30, 31, 31, 30, 31, 30, 31};
-        int month = Integer.parseInt(br.readLine());
-        System.out.println("달을 입력하세요");
-        System.out.println(month + "월은 " + maxDays[month-1] + "일까지 있습니다.");
-        System.out.printf("%d월은 %d일까지 있습니다.\n", month, maxDays[month-1]);
-
-
-
-
-
     }
+
+    public int FindMaxDay(int month){
+        return maxDays[month-1];
+        }
 }
