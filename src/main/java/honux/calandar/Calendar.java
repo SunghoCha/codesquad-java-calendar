@@ -15,29 +15,33 @@ public class Calendar {
         int month = Integer.parseInt(br.readLine());
         Calendar cal = new Calendar();
 
-//        System.out.println(month + "월은 " + cal.FindMaxDay(month) + "일까지 있습니다.");
         System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.FindMaxDay(month));
 
-//        StringBuilder sb = new StringBuilder();
-
-//        System.out.println(" 일 월 화 수 목 금 토");
-//        System.out.println("--------------------");
-//        for (int i = 1; i < 29; i++) {
-//            if (i < 10 && i % 7 == 0) {
-//                sb.append(" ").append(i).append(" ").append("\n");
-//            } else if(i < 10){
-//                sb.append(" ").append(i).append(" ");
-//            } else if(i > 10 && i % 7 == 0){
-//                sb.append(i).append(" ").append("\n");
-//            } else {
-//                sb.append(i).append(" ");
-//            }
-//        }
-//        String s = sb.toString();
-//        System.out.println(s);
+        cal.PrintSample();
     }
 
     public int FindMaxDay(int month){
         return maxDays[month-1];
         }
+
+    public void PrintSample() {
+
+        StringBuilder sb = new StringBuilder();
+
+        System.out.println(" 일 월 화 수 목 금 토");
+        System.out.println("--------------------");
+        for (int i = 1; i < 29; i++) {
+            if (i < 10 && i % 7 == 0) {
+                sb.append(" ").append(i).append(" ").append("\n");
+            } else if(i < 10){
+                sb.append(" ").append(i).append(" ");
+            } else if(i > 10 && i % 7 == 0){
+                sb.append(i).append(" ").append("\n");
+            } else {
+                sb.append(i).append(" ");
+            }
+        }
+        String s = sb.toString();
+        System.out.println(s);
+    }
 }
