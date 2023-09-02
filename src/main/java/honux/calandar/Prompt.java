@@ -1,17 +1,23 @@
 package honux.calandar;
 
-import javax.imageio.IIOException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Prompt {
 
     private final String PROMPT = "cal> ";
+
     public static void main(String[] args) throws IOException {
 
         Prompt p = new Prompt();
         p.runPrompt();
+
     }
 
     public void runPrompt() throws IOException {
@@ -31,10 +37,22 @@ public class Prompt {
 //        }
 
         int month = 0;
+        int year = 0;
         while (month != -1) {
+
+            System.out.println("년도를 입력하세요.");
+            System.out.print("year> ");
+            year = Integer.parseInt(br.readLine());
+
             System.out.println("달을 입력하세요.");
-            System.out.print(PROMPT);
+            System.out.print("cal> ");
             month = Integer.parseInt(br.readLine());
+
+            System.out.println("첫번째 요일을 입력하세요.");
+            System.out.print("weekday> ");
+            String weekday = (br.readLine());
+
+            System.out.println();
 
             if (month == -1) {
                 System.out.println("입력을 종료합니다.");
@@ -43,14 +61,11 @@ public class Prompt {
 
             Calendar cal = new Calendar();
 
-            System.out.println("======== V1 ========");
-            cal.printCalander(2024,month);
-            System.out.println("======== V2 ========");
-            cal.printCalander2(2023,month);
+            cal.printCalander2(year, month, weekday);
             System.out.println();
         }
-
-
     }
+
+
 
 }
