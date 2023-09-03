@@ -63,6 +63,8 @@ public class Prompt {
 
             cal.printCalander2(year, month, weekday);
             System.out.println();
+            cal.printCalander3(year, month);
+            System.out.println();
         }
     }
 
